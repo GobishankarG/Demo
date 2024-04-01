@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search student</title>
+    <style>
+        table,
+        th,
+        td {
+            border: 2px solid;
+        }
+
+        .table-row {
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+</head>
+
+<body>
+    <h2 style="text-align:center"> Student Register Informationn </h2>
+    <div style="margin: 0px auto;">
+        <div class="table-row">
+            <table>
+                <tr>
+                    <th>Student_id</th>
+                    <th>First_name</th>
+                    <th>Last_name</th>
+                    <th>Phone</th>
+                    <th>Email</th>
+                    <th>Gender</th>
+                    <th>Date_of_birth</th>
+                    <th>Date_of_joining</th>
+                    <th>Qualification</th>
+                    <th>Course</th>
+                    <th>Username</th>
+                    <th>Password</th>
+                    <th>Resume</th>
+                    <th>Reference_id</th>
+                    <th>Update</th>
+                    <th>Delete</th>
+                </tr>
+                {% for student_register in student_registers %}
+                <tr>
+                    <td>{{student_register.student_id}}</td>
+                    <td>{{student_register.first_name}}</td>
+                    <td>{{student_register.last_name}}</td>
+                    <td>{{student_register.phone}}</td>
+                    <td>{{student_register.email}}</td>
+                    <td>{{student_register.gender}}</td>
+                    <td>{{student_register.date_of_birth}}</td>
+                    <td>{{student_register.date_of_joining}}</td>
+                    <td>{{student_register.qualification}}</td>
+                    <td>{{student_register.course}}</td>
+                    <td>{{student_register.username}}</td>
+                    <td>{{student_register.password}}</td>
+                    <td>{{student_register.resume}}</td>
+                    <td>{{student_register.reference_id}}</td>
+                    <td>
+                        <a href="/update/{{student_register.pk}}">Update</a>
+                    </td>
+                    <td>
+                        <a href="/delete/{{student_register.pk}}">Delete</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+</body>
+</html>
